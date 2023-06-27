@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
 :root {
-    --menu-green: #0c8054;
+    --menu-green: green;
 }
 /* Existing CSS 
 #root {
@@ -69,7 +69,11 @@
     cursor: pointer;
 }
 
-.nav-underline {
-    border-bottom: 1px solid green; 
-   
+.nav-active {
+    border-bottom: 2px solid var(--menu-green);
+    color: var(--menu-green);
+}
+
+.navlink-hover {
+    border-bottom: 1px solid var(--menu-green);    
 }
