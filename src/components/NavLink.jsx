@@ -3,7 +3,12 @@ import clsx from 'clsx'
 
 const NavLink = props => {
 
-    const {active} = props;
+    let {active} = props;
+
+    // FIXME: The "active" prop should eventually be decided based on where we are on the page
+    if (active === undefined) {
+	active = "false";
+    }
     
     const [hovering, setHovering] = useState(false);
 
@@ -13,7 +18,7 @@ const NavLink = props => {
 
     const className = clsx({
 	"nav-active": active === "true",
-	"navlink-hover": hovering,
+	"navlink-hover": hovering && active === "false",
     });
 
     return (
